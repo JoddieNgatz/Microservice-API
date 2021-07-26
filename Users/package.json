@@ -15,5 +15,9 @@
     "Api"
   ],
   "author": "JNM",
-  "license": "ISC"
+  "license": "ISC",
+  "_id": "users@1.0.0",
+  "dependencies": {
+    "nodemon": "^2.0.12"
+  }
 }
