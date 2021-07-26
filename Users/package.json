@@ -1,0 +1,19 @@
+{
+  "name": "users",
+  "version": "1.0.0",
+  "description": "a microservice that performs CRUD operations on the users data stored",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "microservice",
+    "nodejs",
+    "expressjs",
+    "mongoDb",
+    "Rest",
+    "Api"
+  ],
+  "author": "JNM",
+  "license": "ISC"
+}
