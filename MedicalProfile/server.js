@@ -16,6 +16,9 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.json());
 
+//Routes
+require('./routes/profile.router')(app);
+
 app.get("/", (req, res) => {
     res.status(200).json({ mesaage: "API working Welcome." });
 

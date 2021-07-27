@@ -6,10 +6,10 @@ var Medschema = new Schema({
     username: { type: String, unique: true, required: true }, //will use for userId
     age: { type: String },
     sex: { type: String },
-    AlcoholConsumption: { type: Number },
-    Alergies: { type: Array },
-    MedicalBackground: { type: Array },
-    Pregnant: { type: Boolean},
+    alcoholConsumption: { type: Number },
+    alergies: { type: Array },
+    medicalBackground: { type: Array },
+    pregnant: { type: Boolean},
 });
 
 module.exports =  mongoose.model('MedicalProfile', Medschema)
