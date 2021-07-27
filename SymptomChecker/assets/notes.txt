@@ -1,0 +1,8 @@
+I should be able to search for a symptom 
+and see all the associated diagnoses for the symptom based on the user medical profile
+     filter out based on profile-- posible solutions pass medical
+
+I should be able to see all the searches 
+and the results that I have fetched until now along with the search date.
+ 
+ Store searches in an array or Db ---it should have username as well

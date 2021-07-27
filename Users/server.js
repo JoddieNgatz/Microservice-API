@@ -10,7 +10,7 @@ var corsOptions = {
 };
 
 const db = require('./models/');
- mongoose.connect(db.url, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
+ db.mongoose.connect(db.url, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
         console.log('connected to database');
     }).catch(err => {
         console.log('problem connecting to db', err); process.exit;

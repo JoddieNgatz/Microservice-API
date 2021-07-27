@@ -1,0 +1,116 @@
+[
+    {
+      "Symptoms:": "Difficulty urination",
+      "Associated diagnoses:": "Urinary tract infection",
+      "Medical Profile Restrictions": "Male/Female"
+    },
+    {
+      "Symptoms:": "Difficulty urination",
+      "Associated diagnoses:": "Urinary bladder cancer",
+      "Medical Profile Restrictions": "Male/Female"
+    },
+    {
+      "Symptoms:": "Difficulty urination",
+      "Associated diagnoses:": "Benign Prostate Hyperplasia",
+      "Medical Profile Restrictions": "Male"
+    },
+    {
+      "Symptoms:": "Difficulty urination",
+      "Associated diagnoses:": "Prostate cancer",
+      "Medical Profile Restrictions": "Male"
+    },
+    {
+      "Symptoms:": "Difficulty urination",
+      "Associated diagnoses:": "Kidney stones",
+      "Medical Profile Restrictions": "Male/Female"
+    },
+
+    {
+      "Symptoms:": "Painful urination",
+      "Associated diagnoses:": "Urinary tract infection",
+      "Medical Profile Restrictions": "Male/Female"
+    },
+    {
+      "Symptoms:": "Painful urination",
+      "Associated diagnoses:": "Bacterial vaginosis",
+      "Medical Profile Restrictions": "Only female"
+    },
+    {
+      "Symptoms:": "Painful urination",
+      "Associated diagnoses:": "Epidydimitis",
+      "Medical Profile Restrictions": "Only male"
+    },
+    {
+      "Symptoms:": "Painful urination",
+      "Associated diagnoses:": "Gonorrhea",
+      "Medical Profile Restrictions": "Male/Female"
+    },
+    {
+      "Symptoms:": "Painful urination",
+      "Associated diagnoses:": "Chlamydia",
+      "Medical Profile Restrictions": "Male/Female"
+    },
+
+    {
+      "Symptoms:": "Abdominal pain",
+      "Associated diagnoses:": "Stomach ulcers",
+      "Medical Profile Restrictions": "Male/Female"
+    },
+    {
+      "Symptoms:": "Abdominal pain",
+      "Associated diagnoses:": "Intestinal infections",
+      "Medical Profile Restrictions": "Male/Female"
+    },
+    {
+      "Symptoms:": "Abdominal pain",
+      "Associated diagnoses:": "Food poisoning",
+      "Medical Profile Restrictions": "Male/Female"
+    },
+    {
+      "Symptoms:": "Abdominal pain",
+      "Associated diagnoses:": "Ectopic pregnancy",
+      "Medical Profile Restrictions": "Female"
+    },
+    {
+      "Symptoms:": "Abdominal pain",
+      "Associated diagnoses:": "Pelvic Inflammatory Disease",
+      "Medical Profile Restrictions": "Female"
+    },
+
+    {
+      "Symptoms:": "Difficult breathing",
+      "Associated diagnoses:": "Asthma",
+      "Medical Profile Restrictions": "Aged above 5 years"
+    },
+    {
+      "Symptoms:": "Difficult breathing",
+      "Associated diagnoses:": "Pneumonia",
+      "Medical Profile Restrictions": "All"
+    },
+    {
+      "Symptoms:": "Difficult breathing",
+      "Associated diagnoses:": "Trachea-esophago fistula",
+      "Medical Profile Restrictions": "Only aged below 1 day"
+    },
+    {
+      "Symptoms:": "Difficult breathing",
+      "Associated diagnoses:": "Allergy",
+      "Medical Profile Restrictions": "All"
+    },
+    {
+      "Symptoms:": "Difficult breathing",
+      "Associated diagnoses:": "Upper respiratory infection",
+      "Medical Profile Restrictions": "Only aged below 2 years"
+    },
+
+    {
+      "Symptoms:": "Convulsions",
+      "Associated diagnoses:": "Eclampsia",
+      "Medical Profile Restrictions": "Only pregnant"
+    },
+    {
+      "Symptoms:": "Convulsions",
+      "Associated diagnoses:": "Epilepsia",
+      "Medical Profile Restrictions": "All"
+    }
+  ]
