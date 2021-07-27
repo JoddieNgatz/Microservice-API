@@ -1,6 +1,8 @@
 
 var model = require('../models/user.model');
 const usr = model.usr;
+const bcrypt = require("bcryptjs");
+
 
 // SignIn
 exports.signIn = async (req, res, next) =>
@@ -47,23 +49,23 @@ exports.register = (req, res, next) => {
     if (!body) {
         res.status(418).send({ error: 'Send Content' });
     }
-    bcrypt.hash(req.body.password, 1).then(
-        (hash) => {
+
             const nUser = new usr({
                 "username": req.body.username, //will use for userId
                 "email": req.body.email,
-                "password": hash
+                "password": bcrypt.hashSync(req.body.password, 3)
             });
             //instance
             console.log(`in register controller`);
     
-            nUser.save().then(() => {
-                res.status(201).json({ "message": "User has been registered succesfully" }).catch((err) => {
-                    if (err) {
-                        res.send(500).json({ error: err + 'Error Creating try again' });
-                    }
-                })
-            })
-        });
+    nUser.save((err) => {
+        if (err) {
+            res.status(500).json().send({ message: err });
+            return;
+        } else {
+            res.status(200).json().send({ message: "User registered Successfully!" });
+        }
+    });
+      
 }
 
