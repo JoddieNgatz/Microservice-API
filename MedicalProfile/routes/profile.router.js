@@ -45,15 +45,16 @@ module.exports = app => {
     });
 
 
-    //get/finds users medical profile
+    //    get/finds users medical profile
     
     /**
  * @method - GET
  * @param - /username
  * @description - gets users profile data
  */
-    app.get("/profile/username", (req, res) => {
-       
+    app.get("/profile/:username", (req, res) => {
+        console.log('Get data');
+
         // let username = { username: req.params.username };
         let username = req.params.username;
         
@@ -64,12 +65,11 @@ module.exports = app => {
             if (!data)
                 res.status(404).send({ message: "Cannot get profile with username: " + username });
             else res.send(data);
-        })
-            .catch(err => {
-                res
-                    .status(500)
-                    .send({ message: err + "  Error finding profile with username:" + username });
-            });
+        }).catch(err => {
+            res
+                .status(500)
+                .send({ message: err + "  Error finding profile with username:" + username });
+        });
    
     });
    
@@ -80,7 +80,7 @@ module.exports = app => {
  * @param - /username
  * @description - UPDATES users profile data
  */
-    app.put("/profile/username", (req, res) => {
+    app.put("/profile/:username", (req, res) => {
         
         // let username = { username: req.params.username };
         let username = req.params.username;
@@ -99,12 +99,16 @@ module.exports = app => {
                     
         //save prof
         newProfile.updateOne(username, newProfile).then((data) => {
-            res.status(200).json({ message: 'Succesful Update' });
-            res.status(200).json((data));
+            //res.status(200).json({ message: 'Succesful Update' });
+            let respon = {
+                message: 'Succesful Update',
+                newProfile
+            };
+            res.status(200).json((respon));
                     
         }).catch((err) => {
             res.status(500).json({ message: err + 'Error Updating try again' });
         });
     });
            
-};
+}
