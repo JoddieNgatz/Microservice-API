@@ -15,6 +15,8 @@ const db = require('./model');
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.json());
+//Routes
+require('./routes/symptom.router')(app);
 
 app.get("/", (req, res) => {
     res.status(200).json({ mesaage: "API working Welcome." });
@@ -22,7 +24,7 @@ app.get("/", (req, res) => {
 });
 
 //PORT
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8081;
 
 app.listen(PORT, () => {
     console.log(`Server running on port: ${PORT} at http://localhost:${PORT}`);

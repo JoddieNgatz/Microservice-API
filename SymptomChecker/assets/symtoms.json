@@ -1,118 +1,122 @@
 [
 
     {
-      "Symptoms:": "Difficulty urination",
-      "Associated diagnoses:": "Urinary tract infection",
-      "Medical Profile Restrictions": "Male/Female"
+      "Symptom": "Difficulty urination",
+      "AssociatedDiagnoses": "Urinary tract infection",
+      "MedicalProfileRestrictions": "Unisex"
     },
 
     {
-      "Symptoms:": "Difficulty urination",
-      "Associated diagnoses:": "Urinary bladder cancer",
-      "Medical Profile Restrictions": "Male/Female"
+      "Symptom": "Difficulty urination",
+      "AssociatedDiagnoses": "Urinary bladder cancer",
+      "MedicalProfileRestrictions": "Unisex"
     },
     {
-      "Symptoms:": "Difficulty urination",
-      "Associated diagnoses:": "Benign Prostate Hyperplasia",
-      "Medical Profile Restrictions": "Male"
+      "Symptom": "Difficulty urination",
+      "AssociatedDiagnoses": "Benign Prostate Hyperplasia",
+      "MedicalProfileRestrictions": "Male"
     },
     {
-      "Symptoms:": "Difficulty urination",
-      "Associated diagnoses:": "Prostate cancer",
-      "Medical Profile Restrictions": "Male"
+      "Symptom": "Difficulty urination",
+      "AssociatedDiagnoses": "Prostate cancer",
+      "MedicalProfileRestrictions": "Male"
     },
     {
-      "Symptoms:": "Difficulty urination",
-      "Associated diagnoses:": "Kidney stones",
-      "Medical Profile Restrictions": "Male/Female"
+      "Symptom": "Difficulty urination",
+      "AssociatedDiagnoses": "Kidney stones",
+      "MedicalProfileRestrictions": "Unisex"
+    },
+
+
+
+    
+
+    {
+      "Symptom": "Painful urination",
+      "AssociatedDiagnoses": "Urinary tract infection",
+      "MedicalProfileRestrictions": "Unisex"
+    },
+    {
+      "Symptom": "Painful urination",
+      "AssociatedDiagnoses": "Bacterial vaginosis",
+      "MedicalProfileRestrictions": "Only female"
+    },
+    {
+      "Symptom": "Painful urination",
+      "AssociatedDiagnoses": "Epidydimitis",
+      "MedicalProfileRestrictions": "Male"
+    },
+    {
+      "Symptom": "Painful urination",
+      "AssociatedDiagnoses": "Gonorrhea",
+      "MedicalProfileRestrictions": "Unisex"
+    },
+    {
+      "Symptom": "Painful urination",
+      "AssociatedDiagnoses": "Chlamydia",
+      "MedicalProfileRestrictions": "Unisex"
     },
 
     {
-      "Symptoms:": "Painful urination",
-      "Associated diagnoses:": "Urinary tract infection",
-      "Medical Profile Restrictions": "Male/Female"
+      "Symptom": "Abdominal pain",
+      "AssociatedDiagnoses": "Stomach ulcers",
+      "MedicalProfileRestrictions": "Unisex"
     },
     {
-      "Symptoms:": "Painful urination",
-      "Associated diagnoses:": "Bacterial vaginosis",
-      "Medical Profile Restrictions": "Only female"
+      "Symptom": "Abdominal pain",
+      "AssociatedDiagnoses": "Intestinal infections",
+      "MedicalProfileRestrictions": "Unisex"
     },
     {
-      "Symptoms:": "Painful urination",
-      "Associated diagnoses:": "Epidydimitis",
-      "Medical Profile Restrictions": "Only male"
+      "Symptom": "Abdominal pain",
+      "AssociatedDiagnoses": "Food poisoning",
+      "MedicalProfileRestrictions": "Unisex"
     },
     {
-      "Symptoms:": "Painful urination",
-      "Associated diagnoses:": "Gonorrhea",
-      "Medical Profile Restrictions": "Male/Female"
+      "Symptom": "Abdominal pain",
+      "AssociatedDiagnoses": "Ectopic pregnancy",
+      "MedicalProfileRestrictions": "Female"
     },
     {
-      "Symptoms:": "Painful urination",
-      "Associated diagnoses:": "Chlamydia",
-      "Medical Profile Restrictions": "Male/Female"
-    },
-
-    {
-      "Symptoms:": "Abdominal pain",
-      "Associated diagnoses:": "Stomach ulcers",
-      "Medical Profile Restrictions": "Male/Female"
-    },
-    {
-      "Symptoms:": "Abdominal pain",
-      "Associated diagnoses:": "Intestinal infections",
-      "Medical Profile Restrictions": "Male/Female"
-    },
-    {
-      "Symptoms:": "Abdominal pain",
-      "Associated diagnoses:": "Food poisoning",
-      "Medical Profile Restrictions": "Male/Female"
-    },
-    {
-      "Symptoms:": "Abdominal pain",
-      "Associated diagnoses:": "Ectopic pregnancy",
-      "Medical Profile Restrictions": "Female"
-    },
-    {
-      "Symptoms:": "Abdominal pain",
-      "Associated diagnoses:": "Pelvic Inflammatory Disease",
-      "Medical Profile Restrictions": "Female"
+      "Symptom": "Abdominal pain",
+      "AssociatedDiagnoses": "Pelvic Inflammatory Disease",
+      "MedicalProfileRestrictions": "Female"
     },
 
     {
-      "Symptoms:": "Difficult breathing",
-      "Associated diagnoses:": "Asthma",
-      "Medical Profile Restrictions": "Aged above 5 years"
+      "Symptom": "Difficult breathing",
+      "AssociatedDiagnoses": "Asthma",
+      "MedicalProfileRestrictions": ">5 years"
     },
     {
-      "Symptoms:": "Difficult breathing",
-      "Associated diagnoses:": "Pneumonia",
-      "Medical Profile Restrictions": "All"
+      "Symptom": "Difficult breathing",
+      "AssociatedDiagnoses": "Pneumonia",
+      "MedicalProfileRestrictions": "All"
     },
     {
-      "Symptoms:": "Difficult breathing",
-      "Associated diagnoses:": "Trachea-esophago fistula",
-      "Medical Profile Restrictions": "Only aged below 1 day"
+      "Symptom": "Difficult breathing",
+      "AssociatedDiagnoses": "Trachea-esophago fistula",
+      "MedicalProfileRestrictions": "<1 day"
     },
     {
-      "Symptoms:": "Difficult breathing",
-      "Associated diagnoses:": "Allergy",
-      "Medical Profile Restrictions": "All"
+      "Symptom": "Difficult breathing",
+      "AssociatedDiagnoses": "Allergy",
+      "MedicalProfileRestrictions": "All"
     },
     {
-      "Symptoms:": "Difficult breathing",
-      "Associated diagnoses:": "Upper respiratory infection",
-      "Medical Profile Restrictions": "Only aged below 2 years"
+      "Symptom": "Difficult breathing",
+      "AssociatedDiagnoses": "Upper respiratory infection",
+      "MedicalProfileRestrictions": "<2 years"
     },
 
     {
-      "Symptoms:": "Convulsions",
-      "Associated diagnoses:": "Eclampsia",
-      "Medical Profile Restrictions": "Only pregnant"
+      "Symptom": "Convulsions",
+      "AssociatedDiagnoses": "Eclampsia",
+      "MedicalProfileRestrictions": "pregnant"
     },
     {
-      "Symptoms:": "Convulsions",
-      "Associated diagnoses:": "Epilepsia",
-      "Medical Profile Restrictions": "All"
+      "Symptom": "Convulsions",
+      "AssociatedDiagnoses": "Epilepsia",
+      "MedicalProfileRestrictions": "All"
     }
   ]

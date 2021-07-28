@@ -2,10 +2,11 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var Medschema = new Schema({
+var SymptomsSchema = new Schema({
     "Symptom": { type: String, required: true }, //will use for userId
-    "Associated diagnoses": String,
-    "Medical Profile Restrictions": String
+    "AssociatedDiagnoses": String,
+    "MedicalProfileRestrictions": String
 });
+    
 
-module.exports =  mongoose.model('MedicalProfile', Medschema)
+module.exports = mongoose.model('symptoms', SymptomsSchema);

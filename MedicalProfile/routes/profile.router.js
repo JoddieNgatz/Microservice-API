@@ -1,7 +1,7 @@
 // const { ProfilingLevel } = require('mongodb');
 
 module.exports = app => {
-    //connect controller for books operations
+    
 
     console.log('in routes');
 
@@ -102,7 +102,8 @@ module.exports = app => {
             //res.status(200).json({ message: 'Succesful Update' });
             let respon = {
                 message: 'Succesful Update',
-                newProfile
+                newProfile,
+                
             };
             res.status(200).json((respon));
                     
