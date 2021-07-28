@@ -5,16 +5,13 @@ module.exports = app => {
     console.log('in routes');
     const request = require('request');
     
-    var model = require('../model/');
-    const symptomsMod = model.symptomsModel;
+    var model = require("../model");
+    const symptomsModel = model.symptoms;
     const searchHistory = model.PreviousSearchs;
     let usern = ""
     
-   // var controller = require('../controllers/symptoms.controller');
-    //var searchCntrl = controller.searchSymptoms;
-        //   store users medical profile to parse
+    var controller = require('../controllers/symptoms.controller');
     var usersMedInfo = {};
-    let searchResults = {};
 
 
     /**
@@ -22,16 +19,16 @@ module.exports = app => {
      * @param - 
      * @description - Post symptoms data
      */
-     app.post("/symptoms", (req, res) => {
+    app.post("/symptoms", (req, res) => {
       
         //create and save  
-        const sympt = new symptomsMod({
+        const sympt = new symptomsModel({
             Symptom: req.body.Symptom,
             AssociatedDiagnoses: req.body.AssociatedDiagnoses,
             MedicalProfileRestrictions: req.body.MedicalProfileRestrictions
         });
         
-        //save prof
+        //save symptom
         sympt.save(sympt).then((data) => {
             res.status(200).json((data));
         
@@ -39,7 +36,7 @@ module.exports = app => {
             res.status(500).json({ message: err + 'Error Creating try again' });
         });
        
-     });
+    });
     
     
     /**
@@ -48,13 +45,14 @@ module.exports = app => {
  * @description - gets users profile data
  */
     app.get('/search/:username', (req, res) => {
+
         let username = req.params.username;
         
         console.log(username);
 
-        request(`http://localhost:8080/profile/${username}`,  (error, response, body) => {
-            if(error) {
-                res.json('An error occured Getting medical Info')
+        request(`http://localhost:8080/profile/${username}`, (error, response, body) => {
+            if (error) {
+                res.status(500).json('An error occured Getting medical Info')
             }
             else {
                 res.json(body);
@@ -66,81 +64,80 @@ module.exports = app => {
     });
      
 
-       /**
- * @method - GET
- * @param - /symptom
- * @description - gets symptom search results and saves search history data
- */ 
-    app.get("/symptoms/:symptom", (req, res) => {
+
+    /**
+* @method - GET
+* @param - /symptom
+* @description - / See all searches and results that I have fetched, along with search date and store previous searches,
+*/
+    app.get("/symptoms/:symptom", async (req, res) => {
         console.log('Get data');
+        
         let symptom = req.params.symptom;
         console.log(symptom);
-        symptomsMod.findOne({ symptom }).then((data) => {
+        console.log(usersMedInfo);
+        let alergies = usersMedInfo.alergies;
+        let age = usersMedInfo.age;
+        let sex = usersMedInfo.sex;
+        let pregnant = usersMedInfo.pregnant;
+        if (pregnant == true) {
+            pregnant = "pregnant";
+        }
+        console.log(sex);
 
-
-    //save search History | will save including results that are not succesful search incase one more symptoms are to be added 
-        searchResults = JSON.parse(data);
-        const newSearch = new searchHistory({
-            username: usersMedInfo.username,
-            Searched: symptom ,
-            Results: searchResults,
-        });
+     
+        const foundSymptom = await symptomsModel.find({ $and: [{ Symptom: `${symptom}` }, { $or: [{ MedicalProfileRestrictions: `${sex}` }, { MedicalProfileRestrictions: "Unisex" }, { MedicalProfileRestrictions: "all" },  { MedicalProfileRestrictions: `>${age}` },{ MedicalProfileRestrictions: `<${age}` }, { MedicalProfileRestrictions: `${pregnant}` },] }] });
         
-     //save search history
-        newSearch.save(newSearch).then((data) => {
-            res.status(200).json((data));
+        let username = usersMedInfo.username;
+        const searchResults = { username, symptom, foundSymptom };
+        console.log(searchResults);
+        const v = controller.saveSearchHistory(searchResults, res); //saves result that dont return symptoms as well incase we need to add new ones
         
-        }).catch((err) => {
-            res.status(500).json({ message: err + 'Error saving search history' });
-        });
-                
-           
-            if (!data)
-                res.status(404).json({ message: "Cannot get symptom: " + symptom });
-            else {
-                console.log(data);
-                res.status(200).json(data);
-            }
-        }).catch(err => {
+        
+        if (!foundSymptom) {
             res
                 .status(500)
-                .json({ message: err + "  Error finding symptom. Check Spelling:" + symptom });
-        });
-    });
+                .json({ message: err + "  Error getting symptoms " + foundSymptom });
+        } else {
+            console.log(foundSymptom);
+            res.status(200).json({message: `Saved Search Result ${v}`, foundSymptom });
+           
+    
+        }
+    
 
+    });
 
 
     //create searches
     
     /**
-     * @method - Get all search History
+     * @method - Get all search History for a user
      * @param - /username
      * @description - retrieves all search history
      */
-    app.get("/searches", (req, res) => {
+    app.get("/searches/:username", (req, res) => {
+       let username = { symptom: req.params.username };
         
-       
-    });
+        console.log(username);
 
 
-//         // let symptom = { symptom: req.params.symptom };
-//         let symptom = req.params.symptom;
-        
-//         console.log(symptom);
-
-
-//         profile.find({ symptom }).then((data) => {
-//             let results = { data };
-//             if (!data)
-//                 res.status(404).send({ message: "Cannot get symptom: " + symptom });
-//             else res.send(data);
-//         }).catch(err => {
-//             res
-//                 .status(500)
-//                 .send({ message: err + "  Error finding symptom. Check Spelling:" + symptom });
-//         });
+        profile.find({ username }).then((data) => {
+            if (!data)
+                res.status(404).send({ message: "Cannot get search history for: " + username });
+            else {
+                res.status(200).json({ data });
+            }
+        }).catch(err => {
+            res
+                .status(500)
+                .send({ message: err + "  Error finding history. Check username for: " + username});
+        });
    
-//     });
+    });
+       
+
+
    
 
 }

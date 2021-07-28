@@ -15,25 +15,7 @@ const bcrypt = require("bcryptjs");
  * @description - User can register passing json username,email,password
  */
     app.post("/user/register", (req, res) => {
-        const body = req.body.email;
-        if (!body) {
-            res.status(404).json({ message: "Kindly fill in details username, email and password" });
-        }
-        else {
-        const nUser = new usr({
-            "username": req.body.username, //will use for userId
-            "email": req.body.email,
-            "password": bcrypt.hashSync(req.body.password, 3),
-        });
-        nUser.save((err) => {
-            if (err) {
-                res.status(500).json({ err: err });
-                return;
-            } else {
-                res.status(200).json({ message: "User registered Successfully!" });
-            }
-        });
-    }
+       register(req, res);
     });
 
 
@@ -72,4 +54,27 @@ const bcrypt = require("bcryptjs");
             });
         });
     });
+
+    
+    function register(req, res) {
+        const body = req.body.email;
+        if (!body) {
+            res.status(404).json({ message: "Kindly fill in details username, email and password" });
+        }
+        else {
+            const nUser = new usr({
+                "username": req.body.username, //will use for userId
+                "email": req.body.email,
+                "password": bcrypt.hashSync(req.body.password, 3),
+            });
+            nUser.save((err) => {
+                if (err) {
+                    res.status(500).json({ err: err });
+                    return;
+                } else {
+                    res.status(200).json({ message: "User registered Successfully!" });
+                }
+            });
+        }
+    }
 }

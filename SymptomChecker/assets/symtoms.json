@@ -1,35 +1,31 @@
 [
 
     {
-      "Symptom": "Difficulty urination",
+      "Symptom": "Difficulty urinating",
       "AssociatedDiagnoses": "Urinary tract infection",
       "MedicalProfileRestrictions": "Unisex"
     },
 
     {
-      "Symptom": "Difficulty urination",
+      "Symptom": "Difficulty urinating",
       "AssociatedDiagnoses": "Urinary bladder cancer",
       "MedicalProfileRestrictions": "Unisex"
     },
     {
-      "Symptom": "Difficulty urination",
+      "Symptom": "Difficulty urinating",
       "AssociatedDiagnoses": "Benign Prostate Hyperplasia",
       "MedicalProfileRestrictions": "Male"
     },
     {
-      "Symptom": "Difficulty urination",
+      "Symptom": "Difficulty urinating",
       "AssociatedDiagnoses": "Prostate cancer",
       "MedicalProfileRestrictions": "Male"
     },
     {
-      "Symptom": "Difficulty urination",
+      "Symptom": "Difficulty urinating",
       "AssociatedDiagnoses": "Kidney stones",
       "MedicalProfileRestrictions": "Unisex"
     },
-
-
-
-    
 
     {
       "Symptom": "Painful urination",
@@ -84,27 +80,27 @@
     },
 
     {
-      "Symptom": "Difficult breathing",
+      "Symptom": "Difficulty breathing",
       "AssociatedDiagnoses": "Asthma",
       "MedicalProfileRestrictions": ">5 years"
     },
     {
-      "Symptom": "Difficult breathing",
+      "Symptom": "Difficulty breathing",
       "AssociatedDiagnoses": "Pneumonia",
       "MedicalProfileRestrictions": "All"
     },
     {
-      "Symptom": "Difficult breathing",
+      "Symptom": "Difficulty breathing",
       "AssociatedDiagnoses": "Trachea-esophago fistula",
       "MedicalProfileRestrictions": "<1 day"
     },
     {
-      "Symptom": "Difficult breathing",
+      "Symptom": "Difficuly breathing",
       "AssociatedDiagnoses": "Allergy",
       "MedicalProfileRestrictions": "All"
     },
     {
-      "Symptom": "Difficult breathing",
+      "Symptom": "Difficulty breathing",
       "AssociatedDiagnoses": "Upper respiratory infection",
       "MedicalProfileRestrictions": "<2 years"
     },

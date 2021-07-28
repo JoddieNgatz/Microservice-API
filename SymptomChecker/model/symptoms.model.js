@@ -9,4 +9,4 @@ var SymptomsSchema = new Schema({
 });
     
 
-module.exports = mongoose.model('symptoms', SymptomsSchema);
+module.exports = mongoose.model('symptoms', SymptomsSchema );
