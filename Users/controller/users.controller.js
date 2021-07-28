@@ -1,7 +1,4 @@
 
-    console.log('in routes');
-
-
     var model = require('../models/');
     var controller = require('../controller/users.controller');
     const usr = model.usr;

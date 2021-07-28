@@ -4,6 +4,7 @@ module.exports = app => {
     
     var model = require('../model/');
     const profile = model.medProf;
+    const controller = require('../controller/MedProf.controller');
         
 
     //create profile
@@ -13,32 +14,7 @@ module.exports = app => {
      * @param - /username
      * @description - Post medical information for profile data
      */
-    app.post("/profile/", (req, res) => {
-        
-        const body_Un = req.body.username;
-        if (!body_Un) {
-            res.status(418).json({ message: 'Need username' });
-        }
-        //create and save profile 
-        const prof = new profile({
-            username: req.body.username,
-            age: req.body.age,
-            sex: req.body.sex,
-            alcoholConsumption: req.body.alcoholConsumption,
-            alergies: req.body.alergies,
-            medicalBackground: req.body.medicalBackground,
-            pregnant: req.body.pregnant,
-        });
-        
-        //save prof
-        prof.save(prof).then((data) => {
-            res.status(200).json((data));
-        
-        }).catch((err) => {
-            res.status(500).json({ message: err + 'Error Creating try again' });
-        });
-       
-    });
+    app.post("/profile/", controller.createProfile);
 
 
     //    get/finds users medical profile
@@ -48,26 +24,7 @@ module.exports = app => {
  * @param - /username
  * @description - gets/finds users medical profile data
  */
-    app.get("/profile/:username", (req, res) => {
-        console.log('Get data');
-
-        // let username = { username: req.params.username };
-        let username = req.params.username;
-        
-        console.log(username);
-
-
-        profile.findOne({ username }).then(data => {
-            if (!data)
-                res.status(404).send({ message: "Cannot get profile with username: " + username });
-            else res.send(data);
-        }).catch(err => {
-            res
-                .status(500)
-                .send({ message: err + "  Error finding profile with username:" + username });
-        });
-   
-    });
+    app.get("/profile/:username", controller.findMedProfile);
    
 
        
@@ -76,34 +33,6 @@ module.exports = app => {
  * @param - /username
  * @description - UPDATES users profile data
  */
-    app.put("/profile/:username", (req, res) => {
-        
-        let username = req.params.username;
-        
-        console.log(username);
-
-        const newProfile = new profile({
-            username: req.body.username,
-            age: req.body.age,
-            sex: req.body.sex,
-            alcoholConsumption: req.body.alcoholConsumption,
-            alergies: req.body.alergies,
-            medicalBackground: req.body.medicalBackground,
-            pregnant: req.body.pregnant,
-        });
-                    
-        //save prof
-        newProfile.updateOne(username, newProfile).then((data) => {
-            let respon = {
-                message: 'Succesful Update',
-                newProfile,
-                
-            };
-            res.status(200).json((respon));
-                    
-        }).catch((err) => {
-            res.status(500).json({ message: err + 'Error Updating try again' });
-        });
-    });
+    app.put("/profile/:username", controller.updateMedProfile);
            
 }
