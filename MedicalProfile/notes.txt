@@ -1,0 +1,5 @@
+Microservices:
+
+Users hosted on PORT: 8080
+MedicalProfile hosted on PORT: 8081
+Symptoms hosted on PORT: 8082

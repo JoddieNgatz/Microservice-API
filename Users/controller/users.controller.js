@@ -6,7 +6,8 @@
 
 
 exports.signUp = (req, res) => {
-        const body = req.body.email;
+    const body = req.body.email;
+    if (body.includes('@')) { //checks if email is valid
         if (!body) {
             res.status(404).json({ message: "Kindly fill in details username, email and password" });
         }
@@ -21,43 +22,50 @@ exports.signUp = (req, res) => {
                     res.status(500).json({ err: err });
                     return;
                 } else {
-                    res.status(200).json({ message: "User registered Successfully!" });
+                    res.status(201).json({ message: "User registered Successfully!" });
                 }
             });
         }
+    } else { res.status(400).json({ message: "Not an email" });
+        
+    }
     
 
 };
 
 exports.signIn = (req, res) => {
-       
-    usr.findOne({
-        email: req.body.email
-    }).exec((err, user) => {
-        if (err) {
-            res.status(500), json({ message: err });
-            return;
-        }
-        if (!user) {
-            res.status(404).json({ message: "User Not Found. Register" })
-        }
+    let email = req.body.email;
+    if (email.includes('@')) { //checks if email is valid   
+        usr.findOne({
+            email: req.body.email
+        }).exec((err, user) => {
+            if (err) {
+                res.status(500), json({ message: err });
+                return;
+            }
+            if (!user) {
+                res.status(404).json({ message: "User Not Found. Register" })
+            }
 
-        var passwordValid = bcrypt.compareSync(
-            req.body.password,
-            user.password
-        );
-        if (!passwordValid) {
-            res.status(401).json({
-                message: 'Invalid Passowrd'
-            });
-        }else{
+            var passwordValid = bcrypt.compareSync(
+                req.body.password,
+                user.password
+            );
+            if (!passwordValid) {
+                res.status(401).json({
+                    message: 'Invalid Passowrd'
+                });
+            } else {
         
-        res.status(200).json({
-            message: "Logged In",
-            name: user.username,
-            email: user.email,
+                res.status(200).json({
+                    message: "Logged In",
+                    name: user.username,
+                    email: user.email,
+                });
+            }
         });
-        }
-    });
+    } else {
+        res.status(400).json({ message: "Not an email" });
+    }
 
 };
