@@ -1,11 +1,7 @@
-// const { ProfilingLevel } = require('mongodb');
+
 
 module.exports = app => {
     
-
-    console.log('in routes');
-
-
     var model = require('../model/');
     const profile = model.medProf;
         
@@ -15,7 +11,7 @@ module.exports = app => {
     /**
      * @method - POST
      * @param - /username
-     * @description - Post profile data
+     * @description - Post medical information for profile data
      */
     app.post("/profile/", (req, res) => {
         
@@ -50,7 +46,7 @@ module.exports = app => {
     /**
  * @method - GET
  * @param - /username
- * @description - gets users profile data
+ * @description - gets/finds users medical profile data
  */
     app.get("/profile/:username", (req, res) => {
         console.log('Get data');
@@ -82,7 +78,6 @@ module.exports = app => {
  */
     app.put("/profile/:username", (req, res) => {
         
-        // let username = { username: req.params.username };
         let username = req.params.username;
         
         console.log(username);
@@ -99,7 +94,6 @@ module.exports = app => {
                     
         //save prof
         newProfile.updateOne(username, newProfile).then((data) => {
-            //res.status(200).json({ message: 'Succesful Update' });
             let respon = {
                 message: 'Succesful Update',
                 newProfile,

@@ -1,3 +1,4 @@
+
 [
 
     {
@@ -92,7 +93,7 @@
     {
       "Symptom": "Difficulty breathing",
       "AssociatedDiagnoses": "Trachea-esophago fistula",
-      "MedicalProfileRestrictions": "<1 day"
+      "MedicalProfileRestrictions": "<0.00273972603"
     },
     {
       "Symptom": "Difficuly breathing",
@@ -102,7 +103,7 @@
     {
       "Symptom": "Difficulty breathing",
       "AssociatedDiagnoses": "Upper respiratory infection",
-      "MedicalProfileRestrictions": "<2 years"
+      "MedicalProfileRestrictions": "<2"
     },
 
     {

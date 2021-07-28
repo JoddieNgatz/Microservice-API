@@ -1,17 +1,8 @@
-    
- //Search for a symptom based on medical profile
-    //find all matching symptoms return in as an object
-    //filter arcording to medical profile
-    //Rest Api makes call to medicalprofile api
-    
-  
-        console.log('in controller');
-        const request = require('request');
         var model = require('../model/');
-        const symptoms = model.symptoms;
+        //const symptoms = model.symptoms;
         const searchHistory = model.PreviousSearchs;
 
-       // var usersMedInfo = {};
+   
         
         exports.getUsersMedInfo = (req, res) => {
 
@@ -38,16 +29,16 @@ exports.saveSearchHistory= function(searchResults){
 };
 
 exports.searchSymptoms = (req, res) => {
-    //filter search results using medicl info. then return result and then trigger save searches controller
-    symptoms.find(request.query).then((data) => {
-        let results = { data };
-        if (!data)
-            res.status(404).send({ message: "Cannot get symptom: " + symptom });
-        else res.send(data);
-    }).catch(err => {
-        res
-            .status(500)
-            .send({ message: err + "  Error finding symptom. Check Spelling:" + symptom });
-    });
+    // //filter search results using medicl info. then return result and then trigger save searches controller
+    // symptoms.find(request.query).then((data) => {
+    //     let results = { data };
+    //     if (!data)
+    //         res.status(404).send({ message: "Cannot get symptom: " + symptom });
+    //     else res.send(data);
+    // }).catch(err => {
+    //     res
+    //         .status(500)
+    //         .send({ message: err + "  Error finding symptom. Check Spelling:" + symptom });
+    // });
 
 };

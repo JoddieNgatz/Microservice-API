@@ -1,4 +1,3 @@
-// const { ProfilingLevel } = require('mongodb');
 
 module.exports = app => {
 
@@ -8,7 +7,6 @@ module.exports = app => {
     var model = require("../model");
     const symptomsModel = model.symptoms;
     const searchHistory = model.PreviousSearchs;
-    let usern = ""
     
     var controller = require('../controllers/symptoms.controller');
     var usersMedInfo = {};
@@ -42,7 +40,7 @@ module.exports = app => {
     /**
  * @method - GET
  * @param - /username
- * @description - gets users profile data
+ * @description - gets users profile data from other microservice
  */
     app.get('/search/:username', (req, res) => {
 
@@ -68,7 +66,7 @@ module.exports = app => {
     /**
 * @method - GET
 * @param - /symptom
-* @description - / See all searches and results that I have fetched, along with search date and store previous searches,
+* @description - / Searches for symptoms and save results that have been fetched, along with search date to store previous searches,
 */
     app.get("/symptoms/:symptom", async (req, res) => {
         console.log('Get data');
@@ -83,8 +81,6 @@ module.exports = app => {
         if (pregnant == true) {
             pregnant = "pregnant";
         }
-        console.log(sex);
-
      
         const foundSymptom = await symptomsModel.find({ $and: [{ Symptom: `${symptom}` }, { $or: [{ MedicalProfileRestrictions: `${sex}` }, { MedicalProfileRestrictions: "Unisex" }, { MedicalProfileRestrictions: "all" },  { MedicalProfileRestrictions: `>${age}` },{ MedicalProfileRestrictions: `<${age}` }, { MedicalProfileRestrictions: `${pregnant}` },] }] });
         
@@ -114,7 +110,7 @@ module.exports = app => {
     /**
      * @method - Get all search History for a user
      * @param - /username
-     * @description - retrieves all search history
+     * @description - retrieves all symptom search history of a user
      */
     app.get("/searches/:username", (req, res) => {
        let username = { symptom: req.params.username };
@@ -122,9 +118,9 @@ module.exports = app => {
         console.log(username);
 
 
-        profile.find({ username }).then((data) => {
+        searchHistory.find({ username }).then((data) => {
             if (!data)
-                res.status(404).send({ message: "Cannot get search history for: " + username });
+                res.status(404).json({ message: "Cannot get search history for: " + username });
             else {
                 res.status(200).json({ data });
             }
