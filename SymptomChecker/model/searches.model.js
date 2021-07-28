@@ -7,7 +7,7 @@ var Schema = mongoose.Schema;
 var PreviousSearchs = new Schema({
     "username": String,
     "Searched": String,
-    "Results": Object
+    "Results": Object,
 }, { timestamps: true });
 
 module.exports = mongoose.model('SearchResults', PreviousSearchs);
