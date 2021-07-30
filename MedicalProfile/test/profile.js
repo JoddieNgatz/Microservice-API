@@ -6,7 +6,7 @@ const chaiHttp = require('chai-http');
 const dbHandler = require('./connect');
 const profController = require("../controller/MedProf.controller");
 
-const expect = chai.expect;
+//const expect = chai.expect;
 
 chai.use(chaiHttp);
 
