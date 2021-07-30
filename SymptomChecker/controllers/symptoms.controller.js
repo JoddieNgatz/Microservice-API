@@ -40,11 +40,13 @@ exports.getUsersMedInfo = (req, res) => {
         else {
             
             usersMedInfo = JSON.parse(body);
-            res.status(201).json({ usersMedInfo });
+            body.id = "***";
+            res.status(201).json({ body });
             console.log(usersMedInfo.alergies);
         
         }
     });
+    
 };
 
 exports.searchSymptoms = async (req, res) => {

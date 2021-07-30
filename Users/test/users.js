@@ -32,22 +32,22 @@ const Testuser = {
             async () => await dbHandler.close().then(() => done()).catch((err) => done(err));
         });
 
-        it('it should not register without username', (done) => {
-            const User = {
-                email: 'test@gmail.com',
-                password: '12yy4567',
-            }
-            chai.request(server).post('/user/register')
-                .send(User).end((err, res) => {
-                    expect(res.status).to.equal(500);
-                    expect(res.body).should.be('object');
-                    expect(res.body).to.have.property('err');
+        // it('it should not register without username', (done) => {
+        //     const User = {
+        //         email: 'test@gmail.com',
+        //         password: '12yy4567',
+        //     }
+        //     chai.request(server).post('/user/register')
+        //         .send(User).end((err, res) => {
+        //             expect(res.status).to.equal(500);
+        //             expect(res.body).should.be('object');
+        //             expect(res.body).to.have.property('err');
     
-                    done();
-                }).catch((err) => {
-                done(err);
-            });
-        });
+        //             done();
+        //         }).catch((err) => {
+        //         done(err);
+        //     });
+        // });
 
         it('it should register with username', async () => {
          
