@@ -38,8 +38,9 @@ exports.getUsersMedInfo = (req, res) => {
             res.status(500).json('An error occured Getting medical Info')
         }
         else {
-            res.json(body);
+            
             usersMedInfo = JSON.parse(body);
+            res.status(201).json({ usersMedInfo });
             console.log(usersMedInfo.alergies);
         
         }
@@ -64,18 +65,19 @@ exports.searchSymptoms = async (req, res) => {
                 
     let username = usersMedInfo.username;
     const searchResults = { username, symptom, foundSymptom };
-    console.log(searchResults);
-
+    //console.log(searchResults);
+    
     //const v = controller.saveSearchHistory(searchResults, res); //saves result that dont return symptoms as well incase we need to add new ones
-    const v = this.saveSearchHistory(searchResults, res); //saves result that dont return symptoms as well incase we need to add new ones
-                
+    const savedHistory = this.saveSearchHistory(searchResults, res); //saves result that dont return symptoms as well incase we need to add new ones
+    console.log(savedHistory); 
+    
     if (!foundSymptom) {
         res
             .status(500)
             .json({ message: err + "  Error getting symptoms " + foundSymptom });
     } else {
-        console.log(foundSymptom);
-        res.status(200).json({ message: `Saved Search Result ${v}`, foundSymptom });
+        //console.log(foundSymptom);
+        res.status(200).json({  foundSymptom, message: `Saved Search Result` });
                    
             
     }
@@ -84,7 +86,7 @@ exports.searchSymptoms = async (req, res) => {
 
 
                     
- exports.saveSearchHistory= function(searchResults){
+ exports.saveSearchHistory= function(searchResults, res){
                 console.log("saving search result");
                 console.log(searchResults);
                 //save search History | will save including results that are not succesful search incase one more symptoms are to be added
@@ -95,11 +97,14 @@ exports.searchSymptoms = async (req, res) => {
                 });
                 console.log("recieved post request" + newSearch);
                 //save search history
-                newSearch.save(newSearch).then((data) => {
-                    return ((data));
+     newSearch.save(newSearch).then((data) => {
+                    return "saved search history"
+                   // res.status(201).json({ data });
                     
                 }).catch((err) => {
-                    return ({ message: err + 'Error saving search history' });
+                   // res.status(201).json({ message: err + 'Error saving search history' });
+                    return `Error saving search history ${err}`;
+               
                 });
                         
 };
@@ -123,7 +128,7 @@ exports.searchSymptoms = async (req, res) => {
             }).catch(err => {
                 res
                     .status(500)
-                    .send({ message: err + "  Error finding history. Check username for: " + username});
+                    .json({ message: err + "  Error finding history. Check username for: " + username});
             });
 
         };
