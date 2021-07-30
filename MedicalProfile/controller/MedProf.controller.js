@@ -10,6 +10,7 @@ exports.createProfile = (req, res) => {
     if (!body_Un) {
         res.status(418).json({ message: 'Need username' });
     }
+    if (req.body.sex == "male") { req.body.pregnant = false;}
     //create and save profile 
     const prof = new profile({
         username: req.body.username,

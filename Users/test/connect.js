@@ -1,11 +1,8 @@
-// const dbConfig = require('../config/test.db.config')
-// //const mongoUri = dbConfig.url;
 
 const mongoose = require('mongoose');
 
 const { MongoMemoryServer } = require('mongodb-memory-server');
 const mongod = new MongoMemoryServer();
-//const mongoUri = dbConfig.url;
 
 //in-memory database
 module.exports.connect = async() => {
