@@ -4,7 +4,9 @@
   "description": "a microservice architecture that performs CRUD operations on the data stored",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha  Users/test/users.js", 
+    "test1": "mocha  SymptomChecker/test/symptom.js",
+    "test2": "mocha  MedicalProfile/test/profile.js "
   },
   "repository": {
     "type": "git",
@@ -28,5 +30,8 @@
     "express": "^4.17.1",
     "g": "^2.0.1",
     "mongodb": "^4.0.1"
+  },
+  "devDependencies": {
+    "mocha": "^9.0.3"
   }
 }
