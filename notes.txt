@@ -1,7 +1,7 @@
 Microservices:
 In Production i would use for example Azure Application Gateway(ADC)
 For Gateway
-
+APIGateway: 8079
 Users hosted on PORT: 8080
-MedicalProfile hosted on PORT: 8081
-Symptoms hosted on PORT: 8082
+MedicalProfile hosted on PORT: 8082
+Symptoms hosted on PORT: 8081

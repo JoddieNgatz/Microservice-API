@@ -1,10 +1,12 @@
 {
   "name": "microservice-api",
   "version": "1.0.0",
-  "description": "a microservice architecture that performs CRUD operations on the data stored",
-  "main": "server.js",
+  "description": "a microservice architecture that performs CRUD operations on the data stored with a API GateWay",
+  "main": "apiGateway.js",
   "scripts": {
-    "test": "mocha  Users/test/users.js", 
+    "start": "node server",
+    "dev": "SET NODE_ENV=dev && nodemon server",
+    "test": "mocha  Users/test/users.js --timeout 10000",
     "test1": "mocha  SymptomChecker/test/symptom.js",
     "test2": "mocha  MedicalProfile/test/profile.js "
   },
@@ -26,6 +28,8 @@
   "dependencies": {
     "-": "^0.0.1",
     "apidoc": "^0.28.1",
+    "axios": "^0.21.1",
+    "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "g": "^2.0.1",
