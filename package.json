@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server",
     "dev": "SET NODE_ENV=dev && nodemon server",
-    "test2": "mocha  MedicalProfile/test/profile.js --timeout 10000"
+    "test": "mocha  MedicalProfile/test/profile.js --timeout 10000"
   },
   "repository": {
     "type": "git",
