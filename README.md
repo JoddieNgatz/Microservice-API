@@ -9,6 +9,9 @@
   Symptoms hosted on PORT: 8081
 # Project Structure
    -Users //User login & register Microservice
+   
    -MedicalProfile // Users can create and update medical profile information Microservcice
+   
    -SymptomsChecker  //users can search symptoms for associated diagnoses Microservice
+   
    -API_Gateway_routefiles  //contains API gateway files
