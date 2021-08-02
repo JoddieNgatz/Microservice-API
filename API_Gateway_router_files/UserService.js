@@ -1,7 +1,6 @@
 //file to reroute request to Feed Service
 const express = require('express');
-const router = express.Router()
-const userrouter = require('../Users/routes/user.router')
+const router = express.Router();
 const apiAdapter = require('./apiAdapter');
 const BASE_URL = 'http://localhost:8080';
 const api = apiAdapter(BASE_URL);
