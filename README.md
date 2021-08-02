@@ -4,9 +4,13 @@
    https://documenter.getpostman.com/view/3109347/Tzscpmm2
 # API GATEWAY
   APIGateway PORT: 8079
+  
   Users SignIN & Register Microservice hosted on PORT: 8080
-  MedicalProfile hosted on PORT: 8082
+  
   Symptoms hosted on PORT: 8081
+  
+  MedicalProfile hosted on PORT: 8082
+  
 # Project Structure
    -Users //User login & register Microservice
    
