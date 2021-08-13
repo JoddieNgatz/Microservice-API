@@ -1,0 +1,7 @@
+   // const foundSymptom = await symptomsModel.find(, MedicalProfileRestrictions: `Male`,  MedicalProfileRestrictions: `Male / Female`});
+               //var  .find( { $or: [ { quantity: { $lt: 20 } }, { price: 10 } ] } )
+    //     ///find( {
+    // $and: [
+    //     { $or: [ { qty: { $lt : 10 } }, { qty : { $gt: 50 } } ] },
+    //     { $or: [ { sale: true }, { price : { $lt : 5 } } ] }
+    // ]

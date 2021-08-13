@@ -1,0 +1,119 @@
+
+[
+
+    {
+      "Symptom": "Difficulty urinating",
+      "AssociatedDiagnoses": "Urinary tract infection",
+      "MedicalProfileRestrictions": "Unisex"
+    },
+
+    {
+      "Symptom": "Difficulty urinating",
+      "AssociatedDiagnoses": "Urinary bladder cancer",
+      "MedicalProfileRestrictions": "Unisex"
+    },
+    {
+      "Symptom": "Difficulty urinating",
+      "AssociatedDiagnoses": "Benign Prostate Hyperplasia",
+      "MedicalProfileRestrictions": "Male"
+    },
+    {
+      "Symptom": "Difficulty urinating",
+      "AssociatedDiagnoses": "Prostate cancer",
+      "MedicalProfileRestrictions": "Male"
+    },
+    {
+      "Symptom": "Difficulty urinating",
+      "AssociatedDiagnoses": "Kidney stones",
+      "MedicalProfileRestrictions": "Unisex"
+    },
+
+    {
+      "Symptom": "Painful urination",
+      "AssociatedDiagnoses": "Urinary tract infection",
+      "MedicalProfileRestrictions": "Unisex"
+    },
+    {
+      "Symptom": "Painful urination",
+      "AssociatedDiagnoses": "Bacterial vaginosis",
+      "MedicalProfileRestrictions": "Only female"
+    },
+    {
+      "Symptom": "Painful urination",
+      "AssociatedDiagnoses": "Epidydimitis",
+      "MedicalProfileRestrictions": "Male"
+    },
+    {
+      "Symptom": "Painful urination",
+      "AssociatedDiagnoses": "Gonorrhea",
+      "MedicalProfileRestrictions": "Unisex"
+    },
+    {
+      "Symptom": "Painful urination",
+      "AssociatedDiagnoses": "Chlamydia",
+      "MedicalProfileRestrictions": "Unisex"
+    },
+
+    {
+      "Symptom": "Abdominal pain",
+      "AssociatedDiagnoses": "Stomach ulcers",
+      "MedicalProfileRestrictions": "Unisex"
+    },
+    {
+      "Symptom": "Abdominal pain",
+      "AssociatedDiagnoses": "Intestinal infections",
+      "MedicalProfileRestrictions": "Unisex"
+    },
+    {
+      "Symptom": "Abdominal pain",
+      "AssociatedDiagnoses": "Food poisoning",
+      "MedicalProfileRestrictions": "Unisex"
+    },
+    {
+      "Symptom": "Abdominal pain",
+      "AssociatedDiagnoses": "Ectopic pregnancy",
+      "MedicalProfileRestrictions": "Female"
+    },
+    {
+      "Symptom": "Abdominal pain",
+      "AssociatedDiagnoses": "Pelvic Inflammatory Disease",
+      "MedicalProfileRestrictions": "Female"
+    },
+
+    {
+      "Symptom": "Difficulty breathing",
+      "AssociatedDiagnoses": "Asthma",
+      "MedicalProfileRestrictions": ">5 years"
+    },
+    {
+      "Symptom": "Difficulty breathing",
+      "AssociatedDiagnoses": "Pneumonia",
+      "MedicalProfileRestrictions": "All"
+    },
+    {
+      "Symptom": "Difficulty breathing",
+      "AssociatedDiagnoses": "Trachea-esophago fistula",
+      "MedicalProfileRestrictions": "<0.00273972603"
+    },
+    {
+      "Symptom": "Difficuly breathing",
+      "AssociatedDiagnoses": "Allergy",
+      "MedicalProfileRestrictions": "All"
+    },
+    {
+      "Symptom": "Difficulty breathing",
+      "AssociatedDiagnoses": "Upper respiratory infection",
+      "MedicalProfileRestrictions": "<2"
+    },
+
+    {
+      "Symptom": "Convulsions",
+      "AssociatedDiagnoses": "Eclampsia",
+      "MedicalProfileRestrictions": "pregnant"
+    },
+    {
+      "Symptom": "Convulsions",
+      "AssociatedDiagnoses": "Epilepsia",
+      "MedicalProfileRestrictions": "All"
+    }
+  ]
