@@ -1,0 +1,28 @@
+{
+  "name": "paymentservice",
+  "version": "1.0.0",
+  "description": "payment service for app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "expressjs",
+    "mpesa",
+    "payments",
+    "rest",
+    "api",
+    "microservice"
+  ],
+  "author": "JNM",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongodb": "^4.1.0",
+    "mongoose": "^5.13.7",
+    "request": "^2.88.2",
+    "unirest": "^0.6.0"
+  }
+}
