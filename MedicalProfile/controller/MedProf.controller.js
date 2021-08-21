@@ -44,7 +44,7 @@ exports.findMedProfile = (req, res) => {
     profile.findOne({ username }).then(data => {
         if (!data)
             res.status(404).send({ message: "Cannot get profile with username: " + username });
-        else res.send(data);
+        else res.status(200).json( data );
     }).catch(err => {
         res
             .status(500)

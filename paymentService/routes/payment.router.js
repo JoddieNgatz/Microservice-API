@@ -10,14 +10,15 @@ module.exports = app => {
 
     
 /**
- * @method - get
+ * @method - post
  * @param - /payment
  * @description - User can make payment with mpesa api
  */
-    app.get("/payment/mpesa/:userphone", controller.mpesa);
+    app.post("/payment/mpesa/", controller.mpesa);
 
 
 // /**
+    
 //  * @method - POST
 //  * @param - /signin
 //  * @description - User SignIn passing json email,password

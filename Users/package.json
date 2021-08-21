@@ -28,6 +28,7 @@
     "g": "^2.0.1",
     "mongodb": "^3.6.8",
     "mongoose": "^5.12.14",
+    "mongoose-unique-validator": "^2.0.3",
     "request": "^2.88.2"
   },
   "devDependencies": {

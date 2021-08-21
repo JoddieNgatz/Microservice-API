@@ -1,5 +1,6 @@
 const cors = require('cors');
 const mongoose = require("mongoose");
+const express = require('express'); 
 
 const app = express();
 
@@ -7,12 +8,12 @@ var corsOptions = {
     origin: "http://localhost:8081"//for frontEnd
 };
 
-// const db = require('./models/');
-//  db.mongoose.connect(db.url, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
-//         console.log('connected to database');
-//     }).catch(err => {
-//         console.log('problem connecting to db', err); process.exit;
-//     });
+const db = require('./models/');
+ db.mongoose.connect(db.url, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
+        console.log('connected to database');
+    }).catch(err => {
+        console.log('problem connecting to db', err); process.exit;
+    });
 
 app.use(cors(corsOptions));
 
