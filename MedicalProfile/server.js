@@ -11,6 +11,7 @@ const db = require('./model');
         console.log('problem connecting to db', err); process.exit;
     });
 
+    require('dotenv').config();
 
 app.use(express.urlencoded({ extended: true }));
 

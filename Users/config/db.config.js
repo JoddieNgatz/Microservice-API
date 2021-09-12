@@ -1,3 +1,3 @@
 module.exports = {
-    url: "<Your MongoDb link here>"
+    url: process.env.DB_Prod
 }

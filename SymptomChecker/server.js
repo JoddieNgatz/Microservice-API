@@ -15,7 +15,10 @@ const db = require('./model');
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.json());
+require('dotenv').config();
+
 //Routes
+
 require('./routes/symptom.router')(app);
 
 app.get("/", (req, res) => {

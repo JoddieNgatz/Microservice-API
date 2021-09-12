@@ -23,6 +23,8 @@ app.use(express.json());
 
 //Routes
 require('./routes/payment.router')(app);
+require('dotenv').config();
+
 
 app.get("/", (req, res) => {
     res.status(200).json({ mesaage: "API working Welcome." });

@@ -8,6 +8,7 @@ const app = express();
 var corsOptions = {
     origin: "http://localhost:8081"//for frontEnd
 };
+require('dotenv').config();
 
 const db = require('./models/');
  db.mongoose.connect(db.url, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
