@@ -14,7 +14,7 @@ module.exports = app => {
      * @param - /username
      * @description - Post medical information for profile data
      */
-    app.post("/profile/", controller.createProfile);
+    app.post("/v1/profile/", controller.createProfile);
 
 
     //    get/finds users medical profile
@@ -24,7 +24,7 @@ module.exports = app => {
  * @param - /username
  * @description - gets/finds users medical profile data
  */
-    app.get("/profile/:username", controller.findMedProfile);
+    app.get("/v1/profile/:username", controller.findMedProfile);
    
 
        
@@ -33,6 +33,6 @@ module.exports = app => {
  * @param - /username
  * @description - UPDATES users profile data
  */
-    app.put("/profile/:username", controller.updateMedProfile);
+    app.put("/v1/profile/:username", controller.updateMedProfile);
            
 }

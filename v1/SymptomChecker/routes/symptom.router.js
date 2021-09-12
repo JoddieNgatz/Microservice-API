@@ -12,7 +12,7 @@ module.exports = app => {
      * @param - 
      * @description - Post symptoms data
      */
-    app.post("/symptoms", controller.postSymptoms);
+    app.post("/v1/symptoms", controller.postSymptoms);
     
     
     /**
@@ -20,7 +20,7 @@ module.exports = app => {
  * @param - /username
  * @description - gets users profile data from other microservice
  */
-    app.get('/search/:username', controller.getUsersMedInfo);
+    app.get('/v1/search/:username', controller.getUsersMedInfo);
      
 
 
@@ -29,7 +29,7 @@ module.exports = app => {
 * @param - /symptom
 * @description - / Searches for symptoms and save results that have been fetched, along with search date to store previous searches,
 */
-    app.get("/symptoms/:symptom", controller.searchSymptoms);
+    app.get("/v1/symptoms/:symptom", controller.searchSymptoms);
 
 
     //create searches
@@ -39,7 +39,7 @@ module.exports = app => {
      * @param - /username
      * @description - retrieves all symptom search history of a user
      */
-    app.get("/searches/:username", controller.getUserSearchHistory);
+    app.get("/v1/searches/:username", controller.getUserSearchHistory);
        
 
 

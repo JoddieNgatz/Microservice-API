@@ -14,7 +14,7 @@ module.exports = app => {
  * @param - /register
  * @description - User can register passing json username,email,password
  */
-    app.post("/user/register", controller.signUp);
+    app.post("/v1/user/register", controller.signUp);
 
 
 /**
@@ -22,7 +22,7 @@ module.exports = app => {
  * @param - /signin
  * @description - User SignIn passing json email,password
  */
-    app.post("/user/signin", controller.signIn);
+    app.post("/v1/user/signin", controller.signIn);
 
     
 
